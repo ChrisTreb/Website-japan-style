@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+
+    <title>Christophe Trébaol - Développeur - Portfolio</title>
+
+    <!-- SMALL SLANT - FONT
+   __   ____  ___   ___  _______ 
+  / /  / __ \/ _ | / _ \/ __/ _ \
+ / /__/ /_/ / __ |/ // / _// , _/
+/____/\____/_/ |_/____/___/_/|_| 
+                                 
+ -->
+    <script>
+        var loaded = false;
+
+        window.addEventListener("load", function(event) {
+            loaded = true;
+            return loaded;
+        });
+
+        function onReady(callback) {
+            var intervalId = window.setInterval(function() {
+                if (loaded === true) {
+                    window.clearInterval(intervalId);
+                    callback.call(this);
+                }
+            }, 500);
+        }
+
+        function setVisible(selector, visible) {
+            //document.querySelector(selector).style.display = visible ? 'block' : 'none';
+            if (visible === false) {
+                $(document).ready(function() {
+                    $(selector).fadeOut(1000);
+                });
+            } else {
+                $(document).ready(function() {
+                    $(selector).fadeIn(1000);
+                    // Slide du footer
+                    $("#footer").css("left", "0");
+                    // Slide du titre h1
+                    $("h1").css("top", "0");
+                    //Au chargement de la page on retourne au départ
+                    window.location.href = "#";
+                });
+            }
+        }
+
+        onReady(function() {
+            setVisible('#site', true);
+            setVisible('#loader', false);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="loader" style="z-index: 20;">
+        <div class="loading-text">
+            <p><span><i class="far fa-clock"></i></span><br>LOADING</p>
+        </div>
+    </div>
+
+    <!-- SF CHARACTER -->
+    <img id="sf-character-1" class="sf-char" src="img/sagat.gif" alt="sf4 character">
+    <img id="sf-character-2" class="sf-char" src="img/ryu.gif" alt="sf4 character">
+
+    <!--
+   ___  ___________  ____  _  ___________   ______  ___  __   ____  _______ __
+  / _ \/ __/ __/ _ \/ __ \/ |/ / __/  _/ | / / __/ / _ )/ /  / __ \/ ___/ //_/
+ / , _/ _/_\ \/ ___/ /_/ /    /\ \_/ / | |/ / _/  / _  / /__/ /_/ / /__/ ,<   
+/_/|_/___/___/_/   \____/_/|_/___/___/ |___/___/ /____/____/\____/\___/_/|_|  
+                                                                                                                                                                                                                  
+-->
+
+    <div id="site">
+
+        <!-- 
+   __  ________  ____  __  ___  __  _____  ____________ 
+  /  |/  / __/ |/ / / / / / _ )/ / / / _ \/ ___/ __/ _ \
+ / /|_/ / _//    / /_/ / / _  / /_/ / , _/ (_ / _// , _/
+/_/  /_/___/_/|_/\____/ /____/\____/_/|_|\___/___/_/|_| 
+                                                         
+-->
+        <div class="menu-open">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- 
+   _  _____ _   ______________ ______________  _  __
+  / |/ / _ | | / /  _/ ___/ _ /_  __/  _/ __ \/ |/ /
+ /    / __ | |/ // // (_ / __ |/ / _/ // /_/ /    / 
+/_/|_/_/ |_|___/___/\___/_/ |_/_/ /___/\____/_/|_/  
+                                                                                                                                                                                                                       
+-->
+
+        <div class="row" id="navigation">
+            <div class="col-md-12">
+                <div class="menu-close"><i class="fas fa-times"></i></div>
+                <div id="menu">
+
+                </div>
+            </div>
+        </div>
+
+        <!--
+   ________  ____  _____________ 
+  / __/ __ \/ __ \/_  __/ __/ _ \
+ / _// /_/ / /_/ / / / / _// , _/
+/_/  \____/\____/ /_/ /___/_/|_| 
+
+        -->
+
+        <div id="footer">
+            <div class="footer-links">
+                <a href="#"><span><i class="fab fa-linkedin" data-toggle="tooltip" data-placement="top" title="LinkedIn"></i></span></a>
+                <a href="#"><span><i class="fab fa-github-square" data-toggle="tooltip" data-placement="top" title="Github"></i></span></a>
+                <a href="#"><span><i class="fab fa-facebook-square" data-toggle="tooltip" data-placement="top" title="Facebook"></i></span></a>
+                <a href="#"><span><i class="fab fa-instagram-square" data-toggle="tooltip" data-placement="top" title="Instagram"></i></span></a>
+            </div>
+        </div>
+
+        <!--
+   ___________________________  _  __  ___
+  / __/ __/ ___/_  __/  _/ __ \/ |/ / <  /
+ _\ \/ _// /__  / / _/ // /_/ /    /  / / 
+/___/___/\___/ /_/ /___/\____/_/|_/  /_/  
+                                          
+-->
+
+        <section class="main-content">
+            <div class="row flex-row flex-nowrap">
+
+                <!-- Contenu des pages -->
+                <div class="col-md-12 page">
+                    <div id="home" class="row">
+                        <div class="col-md-4 colored-col title-col">
+                            <div class="title-block">
+                                <h1 class="page-title">CTRL</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="stripe">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-7 colored-col home-right-content">
+                            <div class="upper-home-block">
+                                <div id="home-block">
+                                    <div class="subtitle-block">
+                                        <h2>Développeur</h2>
+                                    </div>
+                                    <div class="home-content">
+                                        <p>
+                                            Tester c'est douter. <span>Go mep asap</span>. <br> Duis <span>iaculis purus</span> iaculis purus vel lobortis. Proin dignissim nibh vitae turpis <span>sagittis lobortis</span>.
+                                        </p>
+                                        <button class="btn random-project">
+                                            <i class="fas fa-random"></i> Voir un projet
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis laoreet augue eu vulputate. Nam in mauris vel urna consequat laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur rutrum ac
+                                    augue posuere bibendum. Donec lacinia accumsan magna eget dignissim. Donec ac facilisis felis. Pellentesque efficitur sagittis risus. Etiam lacinia magna lorem, non rutrum arcu ornare sed. Nulla porttitor hendrerit
+                                    tristique.
+                                </p>
+                                <p>
+                                    Maecenas varius magna sed tincidunt accumsan. Etiam condimentum imperdiet faucibus. Pellentesque rutrum justo nec urna tempor, non laoreet ex pharetra. Aliquam cursus auctor ipsum in egestas. Aliquam erat volutpat. Nulla dictum felis a leo vehicula, non
+                                    mattis dolor posuere.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="project-img project-1">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt"></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin"></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <!-- Empty column -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="project-img project-2">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt"></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin"></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="project-img project-2">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt"></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin"></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--   
+   ___________________________  _  __  ___ 
+  / __/ __/ ___/_  __/  _/ __ \/ |/ / |_  |
+ _\ \/ _// /__  / / _/ // /_/ /    / / __/ 
+/___/___/\___/ /_/ /___/\____/_/|_/ /____/ 
+                                                                       
+    -->
+
+        <section class="main-content">
+            <div class="row flex-row flex-nowrap ">
+
+                <!-- Contenu des pages -->
+                <div class="col-md-12 page">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="project-img project-1">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt"></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin"></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 page ">
+                    <div class="row ">
+                        <div class="col-md-2 ">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-6 description ">
+                            <div class="project-desc ">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis laoreet augue eu vulputate. Nam in mauris vel urna consequat laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur rutrum ac
+                                    augue posuere bibendum. Donec lacinia accumsan magna eget dignissim. Donec ac facilisis felis. Pellentesque efficitur sagittis risus. Etiam lacinia magna lorem, non rutrum arcu ornare sed. Nulla porttitor hendrerit
+                                    tristique.
+                                </p>
+                                <p>
+                                    Maecenas varius magna sed tincidunt accumsan. Etiam condimentum imperdiet faucibus. Pellentesque rutrum justo nec urna tempor, non laoreet ex pharetra. Aliquam cursus auctor ipsum in egestas. Aliquam erat volutpat. Nulla dictum felis a leo vehicula, non
+                                    mattis dolor posuere.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="project-img project-1 ">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons ">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt "></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin "></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square "></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page ">
+                    <div class="row ">
+                        <div class="col-md-2 ">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="project-img project-2 ">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons ">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt "></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin "></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square "></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc ">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 ">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page ">
+                    <div class="row ">
+                        <div class="col-md-2 ">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="project-img project-2 ">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons ">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt "></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin "></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square "></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc ">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 ">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+   ___________________________  _  __  ____
+  / __/ __/ ___/_  __/  _/ __ \/ |/ / |_  /
+ _\ \/ _// /__  / / _/ // /_/ /    / _/_ < 
+/___/___/\___/ /_/ /___/\____/_/|_/ /____/ 
+                                                                                                          
+    -->
+
+
+        <section class="main-content">
+            <div class="row flex-row flex-nowrap">
+
+                <!-- Contenu des pages -->
+                <div class="col-md-12 page">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="project-img project-1">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt"></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin"></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square"></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 page">
+                    <div class="row ">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc ">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis laoreet augue eu vulputate. Nam in mauris vel urna consequat laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur rutrum ac
+                                    augue posuere bibendum. Donec lacinia accumsan magna eget dignissim. Donec ac facilisis felis. Pellentesque efficitur sagittis risus. Etiam lacinia magna lorem, non rutrum arcu ornare sed. Nulla porttitor hendrerit
+                                    tristique.
+                                </p>
+                                <p>
+                                    Maecenas varius magna sed tincidunt accumsan. Etiam condimentum imperdiet faucibus. Pellentesque rutrum justo nec urna tempor, non laoreet ex pharetra. Aliquam cursus auctor ipsum in egestas. Aliquam erat volutpat. Nulla dictum felis a leo vehicula, non
+                                    mattis dolor posuere.
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="project-img project-1">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons ">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt "></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin "></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square "></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-1 ">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page">
+                    <div class="row ">
+                        <div class="col-md-2">
+                            <p class="projects-title page-title">Projets</p>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="project-img project-2">
+                                <!-- IMAGE DE PROJET -->
+                            </div>
+                            <div class="social-icons ">
+                                <a href="#"><span><i class="fas fa-external-link-square-alt "></i></span></a>
+                                <a href="#"><span><i class="fab fa-linkedin "></i></span></a>
+                                <a href="#"><span><i class="fab fa-github-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-facebook-square "></i></span></a>
+                                <a href="#"><span><i class="fab fa-instagram-square "></i></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 description">
+                            <div class="project-desc">
+                                <p>
+                                    Phasellus finibus placerat pretium. Sed porta felis at magna ornare pellentesque. Duis et tellus sem. Proin convallis nulla suscipit, posuere tellus quis, dapibus velit. Suspendisse hendrerit vulputate quam. Vestibulum sed metus elit. Integer pulvinar
+                                    nisl sit amet velit feugiat venenatis. Ut vitae neque erat. Donec quis fringilla est. Phasellus tempus molestie porttitor. Duis aliquet tempor blandit.
+                                </p>
+                                <p>
+                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non pulvinar eros. Sed dapibus ipsum at augue imperdiet pretium. Suspendisse potenti. Donec tristique nibh ante. Praesent ac nisi vulputate tortor euismod
+                                    tempus. In hac habitasse platea dictumst. Pellentesque eget efficitur magna. Nam quis metus porttitor, consequat leo nec, pulvinar metus.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 page contact">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-title">
+                                <p class="page-title">
+                                    Contact
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="form-container" class="col-md-4 col-sm-6 col-xs-7">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Adresse e-mail</label>
+                                    <input type="email" class="form-control" id="email" required="required">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-object" class="form-label">Objet</label>
+                                    <input type="text" class="form-control" id="message-object" required="required">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-content" class="form-label">Message</label>
+                                    <textarea type="text" class="form-control" id="message-content" rows="10" required="required"></textarea>
+                                </div>
+                                <button type="submit" class="btn">Envoyer</button>
+                            </form>
+                        </div>
+
+                        <div class="col-md-4 col-sm-2 col-xs-1">
+                            <!-- EMPTY COLUMN -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!--
+   ____________  _______  __________
+  / __/ ___/ _ \/  _/ _ \/_  __/ __/
+ _\ \/ /__/ , _// // ___/ / / _\ \  
+/___/\___/_/|_/___/_/    /_/ /___/                                
+    
+    -->
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
